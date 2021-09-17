@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  web:
+    command: npm run dev
+    container_name: next-docker-development
+    ports:
+      - 3000:3000
+    build:
+      context: ./
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
+    
